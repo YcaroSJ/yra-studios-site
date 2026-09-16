@@ -157,7 +157,8 @@
     .tab-btn{ flex:0 0 auto; gap:0.4rem; }
     .tab-btn svg{ width:18px; height:18px; }
     .tab-btn span{ font-size:0.58rem; }
-    .service-panel.active{ flex-direction:column-reverse; }
+    .service-panel.active{ flex-direction:column-reverse; flex-wrap:nowrap; }
+    .service-panel-media, .service-panel-text{ flex:none; width:100%; }
     .service-panel-media{ aspect-ratio:4/3; }
     .service-panel-media img{ object-fit:contain; }
   }
