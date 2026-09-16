@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YRA Studios — Marketing, Marca e Tecnologia para Negócios</title>
+<meta name="description" content="A YRA Studios cria sites, identidade visual e campanhas — e fica com você: assessoria comercial e de marketing contínua, com CRM, scripts e indicadores todo mês.">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  :root{
+    --accent:#b8261c;
+    --accent-bright:#d94a3a;
+    --onaccent:#f9f2ee;
+    --mono:"IBM Plex Mono", ui-monospace, monospace;
+    --sans:"Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  html[data-theme="dark"]{
+    --ground:#0b0a09; --panel-1:#121010; --panel-2:#0e0c0b;
+    --ink:#f4efe9; --mute:#9c9088;
+    --line:rgba(244,239,233,0.12); --line-soft:rgba(244,239,233,0.06);
+  }
+  html[data-theme="light"]{
+    --ground:#f5f0e8; --panel-1:#ffffff; --panel-2:#efe8dd;
+    --ink:#17130f; --mute:#6b6058;
+    --line:rgba(23,19,15,0.12); --line-soft:rgba(23,19,15,0.05);
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ margin:0; background:var(--ground); color:var(--ink); font-family:var(--sans); overflow-x:hidden; transition:background .4s ease, color .4s ease; }
+  ::selection{ background:var(--accent); color:var(--onaccent); }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width:1220px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.6rem); }
+  .reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- nav (flush bar, not a pill) ---------- */
+  header.nav{ position:fixed; top:0; left:0; right:0; z-index:50; border-bottom:1px solid transparent; transition:background .3s ease, border-color .3s ease; }
+  header.nav.solid{ background:color-mix(in srgb, var(--ground) 88%, transparent); backdrop-filter:blur(14px); border-color:var(--line); }
+  .nav-bar{ display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:1.5rem; padding:1.1rem 0; }
+  .nav-bar .nav-logo{ justify-self:start; }
+  .nav-bar .nav-links{ justify-self:center; }
+  .nav-bar .nav-right{ justify-self:end; }
+  .nav-logo img{ height:22px; width:auto; }
+  html[data-theme="light"] .nav-logo img{ filter:none; }
+  .nav-links{ display:flex; align-items:center; gap:clamp(1.4rem,3vw,2.4rem); font-family:var(--mono); font-size:0.8rem; }
+  .nav-links a{ opacity:.72; transition:opacity .2s ease; }
+  .nav-links a:hover{ opacity:1; }
+  .nav-right{ display:flex; align-items:center; gap:0.9rem; }
+  .theme-btn{ width:34px; height:34px; border-radius:50%; border:1px solid var(--line); background:transparent; color:var(--ink); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:border-color .2s ease; }
+  .theme-btn:hover{ border-color:var(--accent); }
+  .theme-btn svg{ width:15px; height:15px; }
+  .theme-btn .ic-sun{ display:none; }
+  html[data-theme="light"] .theme-btn .ic-moon{ display:none; }
+  html[data-theme="light"] .theme-btn .ic-sun{ display:block; }
+  .nav-cta{ font-family:var(--mono); font-size:0.8rem; color:var(--ink); border-bottom:1px solid var(--line); padding-bottom:2px; white-space:nowrap; }
+  .nav-cta:hover{ color:var(--accent); border-color:var(--accent); }
+  .nav-toggle{ display:none; width:34px; height:34px; align-items:center; justify-content:center; background:none; border:none; color:var(--ink); font-size:1.3rem; line-height:1; cursor:pointer; flex:0 0 auto; }
+
+  /* o hero é sempre um vídeo claro, então a nav fica escura em cima dele, */
+  /* independente do tema — só volta a seguir o tema depois que rola o scroll */
+  header.nav:not(.solid) .nav-logo img{ filter:brightness(0); }
+  header.nav:not(.solid) .nav-links a,
+  header.nav:not(.solid) .nav-cta,
+  header.nav:not(.solid) .nav-toggle,
+  header.nav:not(.solid) .theme-btn{ color:#141110; }
+  header.nav:not(.solid) .theme-btn{ border-color:rgba(20,17,16,0.3); }
+
+  @media (max-width:820px){
+    .nav-links{ position:fixed; inset:64px 0 auto 0; flex-direction:column; align-items:flex-start; gap:1.1rem; background:var(--ground); border-bottom:1px solid var(--line); padding:1.6rem clamp(1.25rem,4vw,2.6rem) 2rem; transform:translateY(-10px); opacity:0; pointer-events:none; transition:opacity .25s ease, transform .25s ease; font-size:1rem; }
+    .nav-links.open{ opacity:1; pointer-events:auto; transform:translateY(0); }
+    .nav-cta{ display:none; }
+    .nav-toggle{ display:flex; }
+    .wrap.nav-bar{ padding-left:1.25rem; padding-right:1.25rem; }
+  }
+
+  /* ---------- hero: vídeo único de ponta a ponta, texto sobreposto no topo (fora do carro) ---------- */
+  .hero{ position:relative; min-height:100svh; color:#17130f; display:flex; flex-direction:column; align-items:center; overflow:hidden; }
+  .hero-video{ position:absolute; inset:0; z-index:0; width:100%; height:100%; object-fit:cover; }
+
+  /* no celular a tela é estreita e alta: object-fit:cover corta o carro nas laterais. */
+  /* só aqui (não mexe na versão web) trocamos pra contain, com o fundo na mesma cor pra não aparecer barra preta */
+  @media (max-width:700px){
+    .hero{ background:#e9e9e7; }
+    .hero-video{ object-fit:contain; background:#e9e9e7; }
+  }
+
+  .hero-inner{ position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; max-width:920px; text-align:center; padding:clamp(60px,16vh,150px) 1.5rem 0; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.55em; font-family:var(--mono); font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase; color:#4a4038; }
+  .eyebrow .dot{ width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 10px var(--accent); animation:pulse 1.8s ease-in-out infinite; }
+  @keyframes pulse{ 0%,100%{opacity:1; transform:scale(1);} 50%{opacity:.35; transform:scale(.72);} }
+
+  .hero-title{ font-family:var(--sans); font-weight:900; font-size:clamp(1.1rem,3.1vw,2.5rem); letter-spacing:-0.02em; line-height:1.04; margin:0 0 0.7rem; color:#141110; text-shadow:0 2px 30px rgba(255,255,255,0.6); }
+  .hero-title .accentword{ color:var(--accent); }
+
+  .hero-inner p.lead{ font-size:clamp(0.68rem,1.05vw,0.94rem); color:#4a4038; max-width:62ch; margin:6px 0 0; line-height:1.5; font-weight:500; }
+  .btn{ font-family:var(--mono); font-size:0.82rem; padding:0.85rem 1.6rem; border-radius:999px; display:inline-flex; align-items:center; gap:.5em; transition:transform .2s ease, background .2s ease, border-color .2s ease; }
+  .btn-primary{ background:var(--accent); color:var(--onaccent); font-weight:600; }
+  .btn-primary:hover{ background:var(--accent-bright); transform:translateY(-2px); }
+  .btn-text{ font-family:var(--mono); font-size:0.85rem; border-bottom:1px solid var(--line); padding-bottom:2px; color:var(--ink); }
+  .btn-text:hover{ color:var(--accent); border-color:var(--accent); }
+
+  .hero-bottom{ position:absolute; left:50%; bottom:clamp(1.2rem,3.4vw,2rem); transform:translateX(-50%); z-index:2; display:flex; flex-direction:column; align-items:center; gap:0.6rem; }
+  .scroll-cue{ font-family:var(--mono); font-size:0.68rem; letter-spacing:0.2em; color:#4a4038; display:flex; flex-direction:column; align-items:center; gap:.5rem; text-transform:uppercase; }
+  .scroll-cue span{ width:1px; height:32px; background:linear-gradient(#4a4038, transparent); animation:scrollLine 1.8s ease-in-out infinite; }
+  @keyframes scrollLine{ 0%{opacity:.2;} 50%{opacity:1;} 100%{opacity:.2;} }
+
+  /* ---------- panels ---------- */
+  .panel{ padding:clamp(4.5rem,9vw,7rem) 0; border-top:1px solid var(--line); }
+  .section-tag{ font-family:var(--mono); font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:clamp(2rem,4vw,3rem); }
+  html[data-theme="dark"] .section-tag.on-dark{ color:#fff; }
+
+  /* ---------- o que fazemos: abas com conteúdo trocável ---------- */
+  .services-tabs{ display:flex; flex-wrap:wrap; justify-content:center; gap:clamp(1.6rem,4vw,2.8rem); border-bottom:1px solid var(--line); padding-bottom:1.2rem; margin-bottom:clamp(2.2rem,4.5vw,3.2rem); }
+  .tab-btn{ background:none; border:none; cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:0.6rem; padding:0 0 1.1rem; color:var(--ink); opacity:1; position:relative; font-family:var(--sans); }
+  .tab-btn svg{ width:26px; height:26px; stroke:currentColor; fill:none; stroke-width:1.8; transition:stroke .2s ease; }
+  .tab-btn span{ font-family:var(--mono); font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; }
+  .tab-btn::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--accent); transform:scaleX(0); transition:transform .25s ease; }
+  .tab-btn:hover{ color:var(--accent); }
+  .tab-btn.active{ color:var(--accent); }
+  .tab-btn.active::after{ transform:scaleX(1); }
+
+  .service-panel{ display:none; }
+  .service-panel.active{ display:flex; gap:clamp(2rem,5vw,4rem); align-items:flex-start; flex-wrap:wrap; animation:servicePanelIn .5s cubic-bezier(.2,.7,.3,1); }
+  @keyframes servicePanelIn{ from{ opacity:0; transform:translateY(16px); } to{ opacity:1; transform:translateY(0); } }
+  .service-panel.active .service-panel-media{ animation:servicePanelZoom .6s cubic-bezier(.2,.7,.3,1); }
+  @keyframes servicePanelZoom{ from{ opacity:0; transform:scale(1.04); } to{ opacity:1; transform:scale(1); } }
+  .service-panel-text{ flex:1 1 340px; min-width:0; }
+  .service-panel-text h3{ margin:0 0 1rem; font-size:clamp(1.6rem,3.4vw,2.3rem); font-weight:800; letter-spacing:-0.01em; }
+  .service-panel-text h3 em{ font-style:normal; color:var(--accent); }
+  .service-badge{ font-family:var(--mono); font-size:0.6rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--onaccent); background:var(--accent); padding:0.2rem 0.5rem; border-radius:999px; vertical-align:middle; }
+  .service-panel-text > p{ color:var(--mute); line-height:1.7; margin:0 0 1.4rem; max-width:48ch; }
+  .service-checklist{ list-style:none; margin:0 0 1.6rem; padding:0; display:flex; flex-direction:column; gap:0.7rem; }
+  .service-checklist li{ position:relative; padding-left:1.6rem; color:var(--ink); line-height:1.5; font-size:0.95rem; }
+  .service-checklist li::before{ content:"✓"; position:absolute; left:0; top:0; color:var(--accent); font-weight:700; }
+  .service-panel-media{ flex:1 1 300px; min-width:0; border-radius:18px; overflow:hidden; aspect-ratio:4/3; background:var(--panel-2); }
+  .service-panel-media img{ width:100%; height:100%; object-fit:cover; }
+
+  @media (max-width:700px){
+    .services-tabs{ gap:1.4rem; justify-content:space-between; }
+    .tab-btn svg{ width:22px; height:22px; }
+    .service-panel.active{ flex-direction:column-reverse; }
+  }
+
+  /* ---------- manifesto: vídeo de fundo com filtro escuro ---------- */
+  .manifesto{ position:relative; overflow:hidden; text-align:center; }
+  .manifesto-video{ position:absolute; inset:0; z-index:0; width:100%; height:100%; object-fit:cover; object-position:50% 30%; }
+  .manifesto::after{ content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(180deg, rgba(11,10,9,0.72), rgba(11,10,9,0.85)); }
+  .manifesto .wrap{ position:relative; z-index:2; max-width:820px; }
+  .manifesto h2{ font-size:clamp(1.7rem,4.6vw,2.8rem); font-weight:800; line-height:1.25; letter-spacing:-0.01em; margin:0 0 1.2rem; color:#f4efe9; }
+  .manifesto h2 span{ color:var(--accent-bright); }
+  .manifesto p{ color:#c9c0b8; max-width:50ch; margin:0 auto; font-size:1.02rem; line-height:1.6; }
+
+  /* ---------- catálogo: cards com foto real do projeto ---------- */
+  .project-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
+  .project-card{ display:block; border-radius:18px; overflow:hidden; background:var(--panel-2); border:1px solid var(--line); transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
+  .project-card:hover{ transform:translateY(-6px); border-color:color-mix(in srgb, var(--accent) 45%, transparent); box-shadow:0 24px 50px -24px rgba(0,0,0,0.5); }
+  .project-thumb{ position:relative; aspect-ratio:4/3; overflow:hidden; }
+  .project-thumb img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+  .project-card:hover .project-thumb img{ transform:scale(1.06); }
+  .project-thumb-num{ position:absolute; top:0.8rem; left:0.9rem; font-family:var(--mono); font-size:0.7rem; letter-spacing:0.06em; color:#fff; background:rgba(0,0,0,0.55); padding:0.25rem 0.55rem; border-radius:999px; }
+  .project-body{ padding:1.2rem 1.3rem 1.4rem; }
+  .project-tag{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:0.5rem; }
+  .project-body h3{ margin:0; font-size:1.15rem; font-weight:700; display:flex; align-items:center; justify-content:space-between; gap:0.6rem; }
+  .project-arrow{ font-size:1.1rem; color:var(--mute); flex:0 0 auto; transition:transform .2s ease, color .2s ease; }
+  .project-card:hover .project-arrow{ color:var(--accent); transform:translate(3px,-3px); }
+
+  @media (max-width:980px){ .project-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:620px){ .project-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- números: tira tipográfica editorial, contagem ao rolar ---------- */
+  .stats-row{ display:flex; flex-wrap:wrap; }
+  .stat-item{ flex:1 1 200px; padding:0 clamp(1.4rem,3vw,2.6rem); border-left:1px solid var(--line); }
+  .stat-item:first-child{ border-left:none; padding-left:0; }
+  .stat-number{ display:block; font-family:var(--sans); font-weight:900; font-size:clamp(2.4rem,6vw,4.4rem); line-height:1; letter-spacing:-0.02em; margin-bottom:0.6rem; }
+  .stat-number em{ font-style:normal; color:var(--accent); }
+  .stat-label{ display:block; font-family:var(--mono); font-size:0.76rem; color:var(--mute); letter-spacing:0.02em; }
+
+  @media (max-width:760px){
+    .stats-row{ flex-direction:column; gap:1.8rem; }
+    .stat-item{ border-left:none; padding-left:0; padding:0; border-top:1px solid var(--line); padding-top:1.4rem; }
+    .stat-item:first-child{ border-top:none; padding-top:0; }
+  }
+
+  /* ---------- clientes: static logo wall ---------- */
+  .clients-marquee{ overflow:hidden; -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+  .clients-track{ display:flex; align-items:center; width:max-content; animation:clientsScroll 36s linear infinite; }
+  .clients-track:hover{ animation-play-state:paused; }
+  @keyframes clientsScroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  .client-logo{ flex:0 0 auto; display:flex; align-items:center; justify-content:center; height:64px; padding:0 clamp(1.6rem,3.4vw,2.6rem); opacity:.6; transition:opacity .25s ease; }
+  .client-logo:hover{ opacity:1; }
+  .client-logo img{ height:100%; width:auto; max-width:150px; object-fit:contain; filter:brightness(0) invert(1); }
+  html[data-theme="light"] .client-logo img{ filter:none; }
+  .client-logo img.no-filter{ filter:none; }
+  html[data-theme="light"] .client-logo img.always-white{ filter:invert(1); }
+
+  /* ---------- contato ---------- */
+  .contato{ background:linear-gradient(120deg, var(--accent) 0%, var(--accent-bright) 25%, var(--accent) 50%, var(--accent-bright) 75%, var(--accent) 100%); background-size:300% 300%; animation:contatoGradient 16s ease infinite; color:var(--onaccent); border-top:none; }
+  @keyframes contatoGradient{ 0%{ background-position:0% 50%; } 50%{ background-position:100% 50%; } 100%{ background-position:0% 50%; } }
+  .contato-row{ display:flex; justify-content:space-between; align-items:flex-end; gap:2.5rem; flex-wrap:wrap; }
+  .contato-row h2{ font-size:clamp(1.9rem,5vw,3.2rem); font-weight:800; line-height:1.08; margin:0; max-width:14ch; letter-spacing:-0.01em; }
+  .contato-side{ max-width:340px; }
+  .contato-side p{ opacity:.85; line-height:1.6; margin:0 0 1.2rem; font-size:0.98rem; }
+  .contato-side .btn-primary{ background:var(--onaccent); color:var(--accent); }
+  .contato-side .btn-primary:hover{ background:#fff; }
+  .contato-phone{ display:block; margin-top:1rem; font-family:var(--mono); font-size:0.85rem; opacity:.85; }
+  .contato-phone:hover{ opacity:1; }
+
+  footer{ background:var(--panel-2); border-top:1px solid var(--line); padding:2.2rem 0; }
+  .footer-row{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.2rem; }
+  .footer-logo img{ height:16px; }
+  html[data-theme="light"] .footer-logo img{ filter:none; }
+  .footer-meta{ font-family:var(--mono); font-size:0.72rem; color:var(--mute); }
+  .footer-social{ display:flex; gap:1.1rem; font-family:var(--mono); font-size:0.74rem; }
+  .footer-social a{ color:var(--mute); }
+  .footer-social a:hover{ color:var(--accent); }
+
+  .whatsapp-fab{ position:fixed; right:clamp(1rem,3vw,1.6rem); bottom:clamp(1rem,3vw,1.6rem); z-index:45; width:48px; height:48px; border-radius:50%; background:var(--accent); color:var(--onaccent); display:flex; align-items:center; justify-content:center; box-shadow:0 10px 26px -8px rgba(184,38,28,0.5); transition:transform .2s ease; }
+  .whatsapp-fab:hover{ transform:translateY(-3px) scale(1.05); }
+  .whatsapp-fab svg{ width:23px; height:23px; }
+
+  @media (prefers-reduced-motion:reduce){ *{ animation:none!important; transition:none!important; } }
+</style>
+</head>
+<body>
+
+<header class="nav" id="siteNav">
+  <div class="wrap nav-bar">
+    <a class="nav-logo" href="#hero"><img src="LOGO%20YRA.png" alt="YRA Studios"></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#fazemos">O que fazemos</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#clientes">Clientes</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeToggle" aria-label="Alternar tema claro/escuro">
+        <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <a class="nav-cta" href="#contato">Falar com a YRA</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <video class="hero-video" autoplay muted loop playsinline src="video_gerado_1789505577053.mp4"></video>
+  <div class="hero-inner">
+    <h1 class="hero-title">Todo projeto grande começa<br><span class="accentword">com uma arrancada.</span></h1>
+    <p class="lead">Aqui ninguém desacelera depois da largada.<br>A gente segue com você, cuidando da marca e fechando venda todo mês.</p>
+  </div>
+  <div class="hero-bottom">
+    <span class="eyebrow"><span class="dot"></span>disponível para novos projetos</span>
+    <div class="scroll-cue"><span></span>scroll</div>
+  </div>
+</section>
+
+<section class="panel" id="fazemos">
+  <div class="wrap">
+    <span class="section-tag on-dark">O que fazemos</span>
+
+    <div class="services-tabs" id="servicesTabs">
+      <button class="tab-btn active" data-tab="0">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+        <span>Sites</span>
+      </button>
+      <button class="tab-btn" data-tab="1">
+        <svg viewBox="0 0 24 24"><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L9 17l-4 1 1-4L16.5 3.5z"/></svg>
+        <span>Identidade</span>
+      </button>
+      <button class="tab-btn" data-tab="2">
+        <svg viewBox="0 0 24 24"><path d="M3 10v4a1 1 0 0 0 1 1h2l5 4V5L6 9H4a1 1 0 0 0-1 1z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+        <span>Marketing</span>
+      </button>
+      <button class="tab-btn" data-tab="3">
+        <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        <span>Comercial</span>
+      </button>
+      <button class="tab-btn" data-tab="4">
+        <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg>
+        <span>Suporte</span>
+      </button>
+      <button class="tab-btn" data-tab="5">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span>Design</span>
+      </button>
+      <button class="tab-btn" data-tab="6">
+        <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        <span>Audiovisual</span>
+      </button>
+      <button class="tab-btn" data-tab="7">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
+        <span>Tráfego pago</span>
+      </button>
+    </div>
+
+    <div class="services-panels">
+      <div class="service-panel active" data-panel="0">
+        <div class="service-panel-text">
+          <h3>Criação de <em>sites</em></h3>
+          <p>Sites institucionais, landing pages e produtos digitais rápidos, responsivos e feitos sob medida pra sua marca.</p>
+          <ul class="service-checklist">
+            <li>Design e desenvolvimento sob medida, sem template pronto</li>
+            <li>Performance e responsividade em qualquer tela</li>
+            <li>Do primeiro rascunho ao site no ar, em poucos dias</li>
+          </ul>
+          <a class="btn btn-primary" href="https://wa.me/5562995771640?text=Ol%C3%A1!%20Vim%20do%20site%20da%20YRA%20Studios%2C%20quero%20saber%20mais%20sobre%20Cria%C3%A7%C3%A3o%20de%20Sites." target="_blank" rel="noopener">Falar sobre esse serviço</a>
+        </div>
+        <div class="service-panel-media"><img src="https://images.unsplash.com/photo-1487338875411-8880f74114a2?q=80&w=1200&auto=format&fit=crop" alt="Criação de sites" loading="lazy"></div>
+      </div>
+
+      <div class="service-panel" data-panel="1">
+        <div class="service-panel-text">
+          <h3>Identidade <em>visual</em></h3>
+          <p>Branding, direção de arte e materiais alinhados com o posicionamento do seu negócio.</p>
+          <ul class="service-checklist">
+            <li>Marca com posicionamento claro, não só um logo bonito</li>
+            <li>Direção de arte aplicada a redes, site e materiais</li>
+            <li>Consistência visual em cada ponto de contato</li>
+          </ul>
+          <a class="btn btn-primary" href="https://wa.me/5562995771640?text=Ol%C3%A1!%20Vim%20do%20site%20da%20YRA%20Studios%2C%20quero%20saber%20mais%20sobre%20Identidade%20Visual." target="_blank" rel="noopener">Falar sobre esse serviço</a>
+        </div>
+        <div class="service-panel-media"><img src="https://images.unsplash.com/photo-1548094990-c16ca90f1f0d?q=80&w=1200&auto=format&fit=crop" alt="Identidade visual" loading="lazy"></div>
+      </div>
+
+      <div class="service-panel" data-panel="2">
+        <div class="service-panel-text">
+          <h3>Marketing <em>digital</em></h3>
+          <p>Conteúdo, campanhas e performance pra transformar visita em cliente de verdade.</p>
+          <ul class="service-checklist">
+            <li>Campanhas orientadas a resultado, não a curtidas</li>
+            <li>Conteúdo pensado pro seu público, não genérico</li>
+            <li>Acompanhamento constante das métricas que importam</li>
+          </ul>
+          <a class="btn btn-primary" href="https://wa.me/5562995771640?text=Ol%C3%A1!%20Vim%20do%20site%20da%20YRA%20Studios%2C%20quero%20saber%20mais%20sobre%20Marketing%20Digital." target="_blank" rel="noopener">Falar sobre esse serviço</a>
+        </div>
+        <div class="service-panel-media"><img src="https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=1200&auto=format&fit=crop" alt="Marketing digital" loading="lazy"></div>
+      </div>
+
+      <div class="service-panel" data-panel="3">
+        <div class="service-panel-text">
+          <h3>Assessoria e <em>consultoria</em> <span class="service-badge">novo</span></h3>
+          <p>CRM, scripts de venda, follow-up e indicadores — alguém cuidando da sua operação comercial todo mês.</p>
+          <ul class="service-checklist">
+            <li>CRM organizado e scripts de venda revisados todo mês</li>
+            <li>Acompanhamento de follow-up e taxa de resposta</li>
+            <li>Relatório mensal com os indicadores que importam</li>
+          </ul>
+          <a class="btn btn-primary" href="https://wa.me/5562995771640?text=Ol%C3%A1!%20Vim%20do%20site%20da%20YRA%20Studios%2C%20quero%20saber%20mais%20sobre%20Assessoria%20e%20Consultoria." target="_blank" rel="noopener">Falar sobre esse serviço</a>
+        </div>
+        <div class="service-panel-media"><img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop" alt="Assessoria comercial" loading="lazy"></div>
+      </div>
+
+      <div class="service-panel" data-panel="4">
+        <div class="service-panel-text">
+          <h3>Manutenção &amp; <em>suporte</em></h3>
+          <p>Evolução contínua do site, com melhorias e ajustes sempre que precisar.</p>
+          <ul class="service-checklist">
+            <li>Ajustes e melhorias sempre que o negócio pedir</li>
+            <li>Suporte ágil, sem burocracia</li>
+            <li>Site sempre atualizado e no ar</li>
+          </ul>
+          <a class="btn btn-primary" href="https://wa.me/5562995771640?text=Ol%C3%A1!%20Vim%20do%20site%20da%20YRA%20Studios%2C%20quero%20saber%20mais%20sobre%20Manuten%C3%A7%C3%A3o%20%26%20Suporte." target="_blank" rel="noopener">Falar sobre esse serviço</a>
+        </div>
+        <div class="service-panel-media"><img src="https://images.unsplash.com/photo-1553775282-20af80779df7?q=80&w=1200&auto=format&fit=crop" alt="Manutenção e suporte" loading="lazy"></div>
+      </div>
+
+      <div class="service-panel" data-panel="5">
+        <div class="service-panel-text">
+          <h3>Peças de <em>design</em></h3>
+          <p>Posts, apresentações, banners e qualquer peça gráfica que sua marca precisar, no padrão visual certo.</p>
+          <ul class="service-checklist">
+            <li>Peças para redes sociais, apresentações e materiais impressos</li>
+            <li>Sempre dentro do padrão visual da marca</li>
+            <li>Entrega rápida pra campanhas e datas comerciais</li>
+          </ul>
+          <a class="btn btn-primary" href="https://wa.me/5562995771640?text=Ol%C3%A1!%20Vim%20do%20site%20da%20YRA%20Studios%2C%20quero%20saber%20mais%20sobre%20Design." target="_blank" rel="noopener">Falar sobre esse serviço</a>
+        </div>
+        <div class="service-panel-media"><img src="https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?q=80&w=1200&auto=format&fit=crop" alt="Design gráfico" loading="lazy"></div>
+      </div>
+
+      <div class="service-panel" data-panel="6">
+        <div class="service-panel-text">
+          <h3>Produção <em>audiovisual</em></h3>
+          <p>Vídeos institucionais, conteúdo para redes e material de campanha, do roteiro à edição final.</p>
+          <ul class="service-checklist">
+            <li>Roteiro, captação e edição com a mesma equipe</li>
+            <li>Vídeos para redes, institucional e campanhas pagas</li>
+            <li>Formato pensado pra cada plataforma (Reels, YouTube, site)</li>
+          </ul>
+          <a class="btn btn-primary" href="https://wa.me/5562995771640?text=Ol%C3%A1!%20Vim%20do%20site%20da%20YRA%20Studios%2C%20quero%20saber%20mais%20sobre%20Produ%C3%A7%C3%A3o%20Audiovisual." target="_blank" rel="noopener">Falar sobre esse serviço</a>
+        </div>
+        <div class="service-panel-media"><img src="https://images.unsplash.com/photo-1497015289639-54688650d173?q=80&w=1200&auto=format&fit=crop" alt="Produção audiovisual" loading="lazy"></div>
+      </div>
+
+      <div class="service-panel" data-panel="7">
+        <div class="service-panel-text">
+          <h3>Tráfego <em>pago</em></h3>
+          <p>Campanhas no Google, Meta e Instagram pra colocar sua marca na frente de quem já tá procurando comprar.</p>
+          <ul class="service-checklist">
+            <li>Campanhas segmentadas por público e objetivo</li>
+            <li>Otimização constante pra reduzir custo por resultado</li>
+            <li>Relatório claro de quanto voltou pra cada real investido</li>
+          </ul>
+          <a class="btn btn-primary" href="https://wa.me/5562995771640?text=Ol%C3%A1!%20Vim%20do%20site%20da%20YRA%20Studios%2C%20quero%20saber%20mais%20sobre%20Tr%C3%A1fego%20Pago." target="_blank" rel="noopener">Falar sobre esse serviço</a>
+        </div>
+        <div class="service-panel-media"><img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=1200&auto=format&fit=crop" alt="Tráfego pago" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel manifesto">
+  <video class="manifesto-video" autoplay muted loop playsinline src="media/desert-sunrise.mp4"></video>
+  <div class="wrap reveal">
+    <h2>Marca boa sem venda<br>é <span>hobby caro.</span></h2>
+    <p>A YRA junta o design que chama atenção com a operação comercial que fecha negócio — pra sua marca não só parecer boa, vender.</p>
+  </div>
+</section>
+
+
+<section class="panel" id="catalogo">
+  <div class="wrap">
+    <span class="section-tag on-dark">Catálogo</span>
+    <div class="project-grid">
+      <a class="project-card reveal" href="https://drathaisaquino.com.br" target="_blank" rel="noopener">
+        <div class="project-thumb"><img src="media/catalogo-01.jpg" alt="Dra. Thaís Aquino" loading="lazy"><span class="project-thumb-num">01</span></div>
+        <div class="project-body">
+          <span class="project-tag">Institucional</span>
+          <h3>Dra. Thaís Aquino <span class="project-arrow">↗</span></h3>
+        </div>
+      </a>
+      <a class="project-card reveal" href="https://www.figma.com/proto/x0Vk65B3juWqXzgoqJ4yfi/JCA--ITA---ONBEEF?node-id=226-99169&starting-point-node-id=226%3A99169" target="_blank" rel="noopener">
+        <div class="project-thumb"><img src="media/catalogo-02.jpg" alt="ON BEEF" loading="lazy"><span class="project-thumb-num">02</span></div>
+        <div class="project-body">
+          <span class="project-tag">Produto Digital</span>
+          <h3>ON BEEF <span class="project-arrow">↗</span></h3>
+        </div>
+      </a>
+      <a class="project-card reveal" href="https://jacocoelho.com.br/law%26drinks/" target="_blank" rel="noopener">
+        <div class="project-thumb"><img src="media/catalogo-03.jpg" alt="Law & Drinks" loading="lazy"><span class="project-thumb-num">03</span></div>
+        <div class="project-body">
+          <span class="project-tag">Landing Page</span>
+          <h3>Law &amp; Drinks <span class="project-arrow">↗</span></h3>
+        </div>
+      </a>
+      <a class="project-card reveal" href="https://www.figma.com/proto/0CnjLISKAJjXiinQqj4ZkU/OFC-APP-%7C-YIELD-TRACK?node-id=2991-990&starting-point-node-id=2991%3A4296" target="_blank" rel="noopener">
+        <div class="project-thumb"><img src="media/catalogo-04.jpg" alt="Yield Track" loading="lazy"><span class="project-thumb-num">04</span></div>
+        <div class="project-body">
+          <span class="project-tag">Produto Digital</span>
+          <h3>Yield Track <span class="project-arrow">↗</span></h3>
+        </div>
+      </a>
+      <a class="project-card reveal" href="https://www.figma.com/proto/PbuxCfepoUIQBw78AqSldR/Projetos?node-id=713-263&starting-point-node-id=713%3A263" target="_blank" rel="noopener">
+        <div class="project-thumb"><img src="media/catalogo-05.jpg" alt="Grupo Brazil" loading="lazy"><span class="project-thumb-num">05</span></div>
+        <div class="project-body">
+          <span class="project-tag">Identidade Visual</span>
+          <h3>Grupo Brazil <span class="project-arrow">↗</span></h3>
+        </div>
+      </a>
+      <a class="project-card reveal" href="https://jacocoelho.com.br" target="_blank" rel="noopener">
+        <div class="project-thumb"><img src="media/catalogo-06.jpg" alt="JC Advogados" loading="lazy"><span class="project-thumb-num">06</span></div>
+        <div class="project-body">
+          <span class="project-tag">Institucional</span>
+          <h3>JC Advogados <span class="project-arrow">↗</span></h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="wrap">
+    <div class="stats-row reveal">
+      <div class="stat-item">
+        <span class="stat-number" data-count="150" data-prefix="<em>+</em>">0</span>
+        <span class="stat-label">Projetos entregues</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-count="80" data-prefix="<em>+</em>">0</span>
+        <span class="stat-label">Clientes atendidos</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-count="100" data-suffix="<em>%</em>">0</span>
+        <span class="stat-label">Sob medida</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-count="7" data-prefix="<em>-</em>">0</span>
+        <span class="stat-label">Dias em média por projeto</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="clientes">
+  <div class="wrap">
+    <span class="section-tag on-dark">Confiam na YRA</span>
+    <div class="clients-marquee reveal">
+      <div class="clients-track">
+        <span class="client-logo"><img src="Clientes/Group%201044.png" alt="Grupo Brazil" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/Group%20202.png" alt="Francis Personal Trainer" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/Group%20243.png" alt="Benedita Malhas" loading="lazy"></span>
+        <span class="client-logo"><img class="no-filter" src="Clientes/Group%2027.png" alt="ON BEEF" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/Group%20342.png" alt="JC Advogados" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/Group%20353.png" alt="Cliente YRA" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/YIELDTRACK.png" alt="Yieldtrack" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/download%201.png" alt="Amanda Hipólito Psicóloga" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/image%203.png" alt="Dra. Thais Aquino" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/images.png" alt="Inti AgSolutions" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/png%202.png" alt="Cliente YRA" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/Subtract.png" alt="Agrotec" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/goias.png" alt="Governo do Estado de Goiás — SEDI" loading="lazy"></span>
+        <span class="client-logo"><img class="always-white" src="Clientes/Arte%201_PNG.png" alt="HeyHub" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/Group%201044.png" alt="Grupo Brazil" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/Group%20202.png" alt="Francis Personal Trainer" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/Group%20243.png" alt="Benedita Malhas" loading="lazy"></span>
+        <span class="client-logo"><img class="no-filter" src="Clientes/Group%2027.png" alt="ON BEEF" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/Group%20342.png" alt="JC Advogados" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/Group%20353.png" alt="Cliente YRA" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/YIELDTRACK.png" alt="Yieldtrack" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/download%201.png" alt="Amanda Hipólito Psicóloga" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/image%203.png" alt="Dra. Thais Aquino" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/images.png" alt="Inti AgSolutions" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/png%202.png" alt="Cliente YRA" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/Subtract.png" alt="Agrotec" loading="lazy"></span>
+        <span class="client-logo"><img src="Clientes/goias.png" alt="Governo do Estado de Goiás — SEDI" loading="lazy"></span>
+        <span class="client-logo"><img class="always-white" src="Clientes/Arte%201_PNG.png" alt="HeyHub" loading="lazy"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel contato" id="contato">
+  <div class="wrap contato-row reveal">
+    <h2>Vamos criar o próximo passo da sua marca?</h2>
+    <div class="contato-side">
+      <p>Site, marca, campanha ou uma operação comercial rodando todo mês — conte um pouco sobre o seu projeto.</p>
+      <a class="btn btn-primary" href="https://wa.me/5562995771640?text=Ol%C3%A1!%20Vim%20do%20site%20da%20YRA%20Studios%2C%20tenho%20interesse." target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <a class="contato-phone" href="https://wa.me/5562995771640?text=Ol%C3%A1!%20Vim%20do%20site%20da%20YRA%20Studios%2C%20tenho%20interesse." target="_blank" rel="noopener">(62) 99577-1640</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <a class="footer-logo" href="#hero"><img src="LOGO%20YRA.png" alt="YRA Studios"></a>
+    <span class="footer-meta">© 2026 YRA Studios. Todos os direitos reservados.</span>
+    <div class="footer-social">
+      <a href="https://instagram.com/yra_studios" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-fab" href="https://wa.me/5562995771640?text=Ol%C3%A1!%20Vim%20do%20site%20da%20YRA%20Studios%2C%20tenho%20interesse." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.33 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2Zm0 18.2h-.01a8.24 8.24 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.38c0-4.55 3.7-8.25 8.26-8.25 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.42 5.84c0 4.55-3.7 8.24-8.25 8.24Zm4.53-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.4-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.09 0 1.23.9 2.42 1.03 2.59.12.17 1.77 2.71 4.3 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.28Z"/>
+  </svg>
+</a>
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var root = document.documentElement;
+
+  /* theme toggle */
+  var themeBtn = document.getElementById('themeToggle');
+  try{ var saved = localStorage.getItem('yra-theme'); if(saved) root.setAttribute('data-theme', saved); }catch(e){}
+  themeBtn.addEventListener('click', function(){
+    var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', next);
+    try{ localStorage.setItem('yra-theme', next); }catch(e){}
+  });
+
+  /* mobile nav */
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', function(){ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ navLinks.classList.remove('open'); }); });
+
+  /* solid nav on scroll */
+  var nav = document.getElementById('siteNav');
+  var hero = document.getElementById('hero');
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){ nav.classList.toggle('solid', !entry.isIntersecting); });
+  }, { rootMargin: '-85% 0px 0px 0px' }).observe(hero);
+
+  /* reveal on scroll */
+  var revealObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){ entry.target.classList.add('in'); revealObserver.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el){ revealObserver.observe(el); });
+
+  /* ---- números: contagem ao entrar na tela ---- */
+  var statEls = document.querySelectorAll('.stat-number[data-count]');
+  if(statEls.length){
+    var statObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+        var el = entry.target;
+        var target = parseInt(el.getAttribute('data-count'), 10);
+        var prefix = el.getAttribute('data-prefix') || '';
+        var suffix = el.getAttribute('data-suffix') || '';
+        if(reduceMotion){
+          el.innerHTML = prefix + target + suffix;
+        } else {
+          var start = null, duration = 1400;
+          function step(ts){
+            if(!start) start = ts;
+            var progress = Math.min((ts - start) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            el.innerHTML = prefix + Math.round(eased * target) + suffix;
+            if(progress < 1){ requestAnimationFrame(step); }
+          }
+          requestAnimationFrame(step);
+        }
+        statObserver.unobserve(el);
+      });
+    }, { threshold: 0.4 });
+    statEls.forEach(function(el){ statObserver.observe(el); });
+  }
+
+  /* ---- o que fazemos: abas ---- */
+  var tabBtns = document.querySelectorAll('.tab-btn');
+  var tabPanels = document.querySelectorAll('.service-panel');
+  tabBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var target = btn.getAttribute('data-tab');
+      tabBtns.forEach(function(b){ b.classList.toggle('active', b === btn); });
+      tabPanels.forEach(function(p){ p.classList.toggle('active', p.getAttribute('data-panel') === target); });
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
