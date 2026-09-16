@@ -42,9 +42,9 @@
   header.nav{ position:fixed; top:0; left:0; right:0; z-index:50; border-bottom:1px solid transparent; transition:background .3s ease, border-color .3s ease; }
   header.nav.solid{ background:color-mix(in srgb, var(--ground) 88%, transparent); backdrop-filter:blur(14px); border-color:var(--line); }
   .nav-bar{ display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:1.5rem; padding:1.1rem 0; }
-  .nav-bar .nav-logo{ justify-self:start; }
-  .nav-bar .nav-links{ justify-self:center; }
-  .nav-bar .nav-right{ justify-self:end; }
+  .nav-bar .nav-logo{ grid-column:1; justify-self:start; }
+  .nav-bar .nav-links{ grid-column:2; justify-self:center; }
+  .nav-bar .nav-right{ grid-column:3; justify-self:end; }
   .nav-logo img{ height:22px; width:auto; }
   html[data-theme="light"] .nav-logo img{ filter:none; }
   .nav-links{ display:flex; align-items:center; gap:clamp(1.4rem,3vw,2.4rem); font-family:var(--mono); font-size:0.8rem; }
@@ -85,8 +85,8 @@
   /* no celular a tela é estreita e alta: object-fit:cover corta o carro nas laterais. */
   /* só aqui (não mexe na versão web) trocamos pra contain, com o fundo na mesma cor pra não aparecer barra preta */
   @media (max-width:700px){
-    .hero{ background:#e9e9e7; }
-    .hero-video{ object-fit:contain; background:#e9e9e7; }
+    .hero{ background:#e9e9e7; min-height:0; height:396px; padding-bottom:0; }
+    .hero-video{ object-fit:contain; object-position:center 190px; background:#e9e9e7; }
   }
 
   .hero-inner{ position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; max-width:920px; text-align:center; padding:clamp(60px,16vh,150px) 1.5rem 0; }
@@ -98,6 +98,11 @@
   .hero-title .accentword{ color:var(--accent); }
 
   .hero-inner p.lead{ font-size:clamp(0.68rem,1.05vw,0.94rem); color:#4a4038; max-width:62ch; margin:6px 0 0; line-height:1.5; font-weight:500; }
+  br.brk-mobile{ display:none; }
+  @media (max-width:700px){
+    .hero-inner{ padding-top:calc(clamp(60px,16vh,150px) - 20px); }
+    br.brk-mobile{ display:block; }
+  }
   .btn{ font-family:var(--mono); font-size:0.82rem; padding:0.85rem 1.6rem; border-radius:999px; display:inline-flex; align-items:center; gap:.5em; transition:transform .2s ease, background .2s ease, border-color .2s ease; }
   .btn-primary{ background:var(--accent); color:var(--onaccent); font-weight:600; }
   .btn-primary:hover{ background:var(--accent-bright); transform:translateY(-2px); }
@@ -105,8 +110,15 @@
   .btn-text:hover{ color:var(--accent); border-color:var(--accent); }
 
   .hero-bottom{ position:absolute; left:50%; bottom:clamp(1.2rem,3.4vw,2rem); transform:translateX(-50%); z-index:2; display:flex; flex-direction:column; align-items:center; gap:0.6rem; }
+  @media (max-width:700px){
+    .hero-bottom{ bottom:auto; top:371px; gap:0.4rem; transform:translateX(-50%); }
+    .eyebrow{ white-space:nowrap; font-size:0.6rem; letter-spacing:0.1em; }
+  }
   .scroll-cue{ font-family:var(--mono); font-size:0.68rem; letter-spacing:0.2em; color:#4a4038; display:flex; flex-direction:column; align-items:center; gap:.5rem; text-transform:uppercase; }
   .scroll-cue span{ width:1px; height:32px; background:linear-gradient(#4a4038, transparent); animation:scrollLine 1.8s ease-in-out infinite; }
+  @media (max-width:700px){
+    .scroll-cue{ display:none; }
+  }
   @keyframes scrollLine{ 0%{opacity:.2;} 50%{opacity:1;} 100%{opacity:.2;} }
 
   /* ---------- panels ---------- */
@@ -248,12 +260,12 @@
 </header>
 
 <section class="hero" id="hero">
-  <video class="hero-video" autoplay muted loop playsinline src="video_gerado_1789505577053.mp4"></video>
-  <div class="hero-inner">
+  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline src="video_gerado_1789505577053.mp4"></video>
+  <div class="hero-inner" id="heroInner">
     <h1 class="hero-title">Todo projeto grande começa<br><span class="accentword">com uma arrancada.</span></h1>
-    <p class="lead">Aqui ninguém desacelera depois da largada.<br>A gente segue com você, cuidando da marca e fechando venda todo mês.</p>
+    <p class="lead">Aqui ninguém desacelera depois da largada.<br>A gente segue com você, cuidando da marca<br class="brk-mobile"> e fechando venda todo mês.</p>
   </div>
-  <div class="hero-bottom">
+  <div class="hero-bottom" id="heroBottom">
     <span class="eyebrow"><span class="dot"></span>disponível para novos projetos</span>
     <div class="scroll-cue"><span></span>scroll</div>
   </div>
@@ -637,6 +649,97 @@
     });
   });
 
+})();
+</script>
+
+<script>
+(function(){
+  var params = new URLSearchParams(location.search);
+  if(!params.get('edit')) return;
+
+  document.documentElement.classList.add('edit-mode');
+
+  var style = document.createElement('style');
+  style.textContent =
+    '#editHud{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#111;color:#fff;font:12px monospace;padding:10px 14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;box-shadow:0 -2px 12px rgba(0,0,0,.4);}' +
+    '.edit-row{display:flex;gap:6px;align-items:center;}' +
+    '#editHud button{background:#d94a3a;color:#fff;border:none;border-radius:4px;padding:4px 8px;font:12px monospace;cursor:pointer;}' +
+    '#edReset{background:#333;}' +
+    '.edit-hint{width:100%;opacity:.7;}' +
+    '.edit-mode #heroInner, .edit-mode #heroBottom, .edit-mode #fazemos{cursor:grab;outline:1px dashed rgba(217,74,58,.7);user-select:none;-webkit-user-select:none;touch-action:none;}' +
+    '.edit-mode #heroInner:active, .edit-mode #heroBottom:active, .edit-mode #fazemos:active{cursor:grabbing;}' +
+    '.edit-mode #fazemos{position:relative;z-index:5;}';
+  document.head.appendChild(style);
+
+  var hud = document.createElement('div');
+  hud.id = 'editHud';
+  hud.innerHTML =
+    '<div class="edit-row"><span>Texto</span><b id="edTextVal">0px</b></div>' +
+    '<div class="edit-row"><span>Disponível</span><b id="edBottomVal">0px</b></div>' +
+    '<div class="edit-row"><span>Carro</span>' +
+      '<button type="button" data-car="-10">-10</button>' +
+      '<b id="edCarVal">190px</b>' +
+      '<button type="button" data-car="10">+10</button>' +
+    '</div>' +
+    '<div class="edit-row"><span>Seção fazemos</span><b id="edFazemosVal">0px</b></div>' +
+    '<div class="edit-hint">Arraste o texto, o "disponível" e a seção "O que fazemos" na tela pra reposicionar. Me fale os números quando estiver bom.</div>' +
+    '<button type="button" id="edReset">Resetar</button>';
+  document.body.appendChild(hud);
+
+  function makeDraggable(el, valId, clampFn){
+    var offset = 0, startY = 0, dragging = false, naturalTop = 0;
+    function apply(v){
+      var val = Math.round(v);
+      if(clampFn) val = clampFn(val, naturalTop);
+      if(el.id === 'heroBottom'){
+        el.style.transform = 'translateX(-50%) translateY(' + val + 'px)';
+      } else {
+        el.style.transform = 'translateY(' + val + 'px)';
+      }
+      document.getElementById(valId).textContent = val + 'px';
+      return val;
+    }
+    el.addEventListener('pointerdown', function(e){
+      dragging = true; startY = e.clientY; el.setPointerCapture(e.pointerId);
+      naturalTop = el.getBoundingClientRect().top - offset;
+    });
+    el.addEventListener('pointermove', function(e){
+      if(!dragging) return;
+      apply(offset + (e.clientY - startY));
+    });
+    el.addEventListener('pointerup', function(e){
+      if(!dragging) return;
+      dragging = false;
+      offset = apply(offset + (e.clientY - startY));
+    });
+    el._editReset = function(){ offset = 0; apply(0); };
+  }
+  var heroInner = document.getElementById('heroInner');
+  var heroBottom = document.getElementById('heroBottom');
+  var fazemos = document.getElementById('fazemos');
+  makeDraggable(heroInner, 'edTextVal');
+  makeDraggable(heroBottom, 'edBottomVal');
+  makeDraggable(fazemos, 'edFazemosVal', function(val, naturalTop){
+    var limit = heroBottom.getBoundingClientRect().bottom;
+    var minAllowed = Math.round(limit - naturalTop);
+    return Math.max(val, minAllowed);
+  });
+
+  var carVal = 190;
+  var video = document.getElementById('heroVideo');
+  function updateCar(){
+    video.style.objectPosition = 'center ' + carVal + 'px';
+    document.getElementById('edCarVal').textContent = carVal + 'px';
+  }
+  hud.addEventListener('click', function(e){
+    var d = e.target.getAttribute('data-car');
+    if(d){ carVal += parseInt(d,10); updateCar(); }
+    if(e.target.id === 'edReset'){
+      carVal = 190; updateCar();
+      heroInner._editReset(); heroBottom._editReset(); fazemos._editReset();
+    }
+  });
+  updateCar();
 })();
 </script>
 
