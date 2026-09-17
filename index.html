@@ -217,7 +217,7 @@
   html[data-theme="light"] .client-logo img.always-white{ filter:invert(1); }
 
   /* ---------- contato ---------- */
-  .contato{ position:relative; overflow:visible; background:linear-gradient(120deg, var(--accent) 0%, var(--accent-bright) 25%, var(--accent) 50%, var(--accent-bright) 75%, var(--accent) 100%); background-size:300% 300%; animation:contatoGradient 16s ease infinite; color:var(--onaccent); border-top:none; }
+  .contato{ background:linear-gradient(120deg, var(--accent) 0%, var(--accent-bright) 25%, var(--accent) 50%, var(--accent-bright) 75%, var(--accent) 100%); background-size:300% 300%; animation:contatoGradient 16s ease infinite; color:var(--onaccent); border-top:none; }
   @keyframes contatoGradient{ 0%{ background-position:0% 50%; } 50%{ background-position:100% 50%; } 100%{ background-position:0% 50%; } }
   .contato-row{ display:flex; justify-content:space-between; align-items:flex-end; gap:2.5rem; flex-wrap:wrap; }
   .contato-row h2{ font-size:clamp(1.9rem,5vw,3.2rem); font-weight:800; line-height:1.08; margin:0; max-width:14ch; letter-spacing:-0.01em; }
@@ -227,14 +227,6 @@
   .contato-side .btn-primary:hover{ background:#fff; }
   .contato-phone{ display:block; margin-top:1rem; font-family:var(--mono); font-size:0.85rem; opacity:.85; }
   .contato-phone:hover{ opacity:1; }
-  .contato-phone-mockup{ position:absolute; left:calc(2rem + 242px); top:-84px; width:300px; z-index:3; pointer-events:none; filter:drop-shadow(0 30px 40px rgba(0,0,0,.4)); animation:phoneFloat 5s ease-in-out infinite; }
-  @keyframes phoneFloat{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-18px); } }
-  @media (min-width:901px){
-    .contato-row{ padding-left:600px; flex-wrap:nowrap; gap:1.5rem; }
-  }
-  @media (max-width:900px){
-    .contato-phone-mockup{ display:none; }
-  }
 
   footer{ background:var(--panel-2); border-top:1px solid var(--line); padding:2.2rem 0; }
   .footer-row{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.2rem; }
@@ -561,7 +553,6 @@
 </section>
 
 <section class="panel contato" id="contato">
-  <img class="contato-phone-mockup" src="iPhone%2015%20Pro%20Mockup%2C%20Front%20and%20Back%20View.png" alt="YRA Studios no Instagram">
   <div class="wrap contato-row reveal">
     <h2>Vamos criar o próximo passo da sua marca?</h2>
     <div class="contato-side">
