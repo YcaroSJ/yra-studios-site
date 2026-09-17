@@ -226,8 +226,11 @@
   .contato-side .btn-primary{ background:var(--onaccent); color:var(--accent); }
   .contato-side .btn-primary:hover{ background:#fff; }
   .contato-phone{ display:block; margin-top:1rem; font-family:var(--mono); font-size:0.85rem; opacity:.85; }
-  .contato-phone-mockup{ position:absolute; right:clamp(1rem,6vw,5rem); top:-190px; width:clamp(160px,20vw,240px); z-index:3; pointer-events:none; filter:drop-shadow(0 30px 40px rgba(0,0,0,.4)); animation:phoneFloat 5s ease-in-out infinite; }
+  .contato-phone-mockup{ position:absolute; left:clamp(1rem,6vw,4rem); top:-160px; width:clamp(160px,20vw,240px); z-index:3; pointer-events:none; filter:drop-shadow(0 30px 40px rgba(0,0,0,.4)); animation:phoneFloat 5s ease-in-out infinite; }
   @keyframes phoneFloat{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-18px); } }
+  @media (min-width:901px){
+    .contato-row{ padding-left:clamp(180px,20vw,260px); }
+  }
   @media (max-width:900px){
     .contato-phone-mockup{ display:none; }
   }
