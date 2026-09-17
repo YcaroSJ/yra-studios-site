@@ -226,10 +226,10 @@
   .contato-side .btn-primary{ background:var(--onaccent); color:var(--accent); }
   .contato-side .btn-primary:hover{ background:#fff; }
   .contato-phone{ display:block; margin-top:1rem; font-family:var(--mono); font-size:0.85rem; opacity:.85; }
-  .contato-phone-mockup{ position:absolute; left:2rem; top:-50px; width:240px; z-index:3; pointer-events:none; filter:drop-shadow(0 30px 40px rgba(0,0,0,.4)); animation:phoneFloat 5s ease-in-out infinite; }
+  .contato-phone-mockup{ position:absolute; left:calc(2rem + 242px); top:-84px; width:300px; z-index:3; pointer-events:none; filter:drop-shadow(0 30px 40px rgba(0,0,0,.4)); animation:phoneFloat 5s ease-in-out infinite; }
   @keyframes phoneFloat{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-18px); } }
   @media (min-width:901px){
-    .contato-row{ padding-left:300px; }
+    .contato-row{ padding-left:600px; }
   }
   @media (max-width:900px){
     .contato-phone-mockup{ display:none; }
@@ -561,7 +561,7 @@
 </section>
 
 <section class="panel contato" id="contato">
-  <img class="contato-phone-mockup" src="iPhone%2015%20Pro%20Mockup%2C%20Front%20and%20Back%20View.png" alt="YRA Studios no Instagram">
+  <img class="contato-phone-mockup" id="contatoPhone" src="iPhone%2015%20Pro%20Mockup%2C%20Front%20and%20Back%20View.png" alt="YRA Studios no Instagram">
   <div class="wrap contato-row reveal">
     <h2>Vamos criar o próximo passo da sua marca?</h2>
     <div class="contato-side">
@@ -681,9 +681,10 @@
     '#editHud button{background:#d94a3a;color:#fff;border:none;border-radius:4px;padding:4px 8px;font:12px monospace;cursor:pointer;}' +
     '#edReset{background:#333;}' +
     '.edit-hint{width:100%;opacity:.7;}' +
-    '.edit-mode #heroInner, .edit-mode #heroBottom, .edit-mode #fazemos{cursor:grab;outline:1px dashed rgba(217,74,58,.7);user-select:none;-webkit-user-select:none;touch-action:none;}' +
-    '.edit-mode #heroInner:active, .edit-mode #heroBottom:active, .edit-mode #fazemos:active{cursor:grabbing;}' +
-    '.edit-mode #fazemos{position:relative;z-index:5;}';
+    '.edit-mode #heroInner, .edit-mode #heroBottom, .edit-mode #fazemos, .edit-mode #contatoPhone{cursor:grab;outline:1px dashed rgba(217,74,58,.7);user-select:none;-webkit-user-select:none;touch-action:none;}' +
+    '.edit-mode #heroInner:active, .edit-mode #heroBottom:active, .edit-mode #fazemos:active, .edit-mode #contatoPhone:active{cursor:grabbing;}' +
+    '.edit-mode #fazemos{position:relative;z-index:5;}' +
+    '.edit-mode #contatoPhone{pointer-events:auto!important;display:block!important;animation:none!important;}';
   document.head.appendChild(style);
 
   var hud = document.createElement('div');
@@ -697,7 +698,13 @@
       '<button type="button" data-car="10">+10</button>' +
     '</div>' +
     '<div class="edit-row"><span>Seção fazemos</span><b id="edFazemosVal">0px</b></div>' +
-    '<div class="edit-hint">Arraste o texto, o "disponível" e a seção "O que fazemos" na tela pra reposicionar. Me fale os números quando estiver bom.</div>' +
+    '<div class="edit-row"><span>Celular pos</span><b id="edPhonePos">0,0</b></div>' +
+    '<div class="edit-row"><span>Celular tam</span>' +
+      '<button type="button" data-phone="-20">-20</button>' +
+      '<b id="edPhoneSize">240px</b>' +
+      '<button type="button" data-phone="20">+20</button>' +
+    '</div>' +
+    '<div class="edit-hint">Arraste o texto, o "disponível", a seção "O que fazemos" e o celular na tela pra reposicionar. Me fale os números quando estiver bom.</div>' +
     '<button type="button" id="edReset">Resetar</button>';
   document.body.appendChild(hud);
 
@@ -740,6 +747,35 @@
     return Math.max(val, minAllowed);
   });
 
+  var contatoPhone = document.getElementById('contatoPhone');
+  var phoneX = 0, phoneY = 0, phoneDragging = false, phoneStartX = 0, phoneStartY = 0;
+  var phoneSize = 240;
+  function applyPhone(){
+    contatoPhone.style.transform = 'translate(' + Math.round(phoneX) + 'px,' + Math.round(phoneY) + 'px)';
+    contatoPhone.style.width = phoneSize + 'px';
+    document.getElementById('edPhonePos').textContent = Math.round(phoneX) + ',' + Math.round(phoneY);
+    document.getElementById('edPhoneSize').textContent = phoneSize + 'px';
+  }
+  contatoPhone.addEventListener('pointerdown', function(e){
+    phoneDragging = true; phoneStartX = e.clientX; phoneStartY = e.clientY; contatoPhone.setPointerCapture(e.pointerId);
+  });
+  contatoPhone.addEventListener('pointermove', function(e){
+    if(!phoneDragging) return;
+    applyPhoneLive(phoneX + (e.clientX - phoneStartX), phoneY + (e.clientY - phoneStartY));
+  });
+  contatoPhone.addEventListener('pointerup', function(e){
+    if(!phoneDragging) return;
+    phoneDragging = false;
+    phoneX += (e.clientX - phoneStartX); phoneY += (e.clientY - phoneStartY);
+    applyPhone();
+  });
+  function applyPhoneLive(x,y){
+    contatoPhone.style.transform = 'translate(' + Math.round(x) + 'px,' + Math.round(y) + 'px)';
+    document.getElementById('edPhonePos').textContent = Math.round(x) + ',' + Math.round(y);
+  }
+  contatoPhone._editReset = function(){ phoneX = 0; phoneY = 0; phoneSize = 240; applyPhone(); };
+  applyPhone();
+
   var carVal = 190;
   var video = document.getElementById('heroVideo');
   function updateCar(){
@@ -749,9 +785,11 @@
   hud.addEventListener('click', function(e){
     var d = e.target.getAttribute('data-car');
     if(d){ carVal += parseInt(d,10); updateCar(); }
+    var p = e.target.getAttribute('data-phone');
+    if(p){ phoneSize += parseInt(p,10); applyPhone(); }
     if(e.target.id === 'edReset'){
       carVal = 190; updateCar();
-      heroInner._editReset(); heroBottom._editReset(); fazemos._editReset();
+      heroInner._editReset(); heroBottom._editReset(); fazemos._editReset(); contatoPhone._editReset();
     }
   });
   updateCar();

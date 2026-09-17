@@ -227,10 +227,10 @@
   .contato-side .btn-primary:hover{ background:#fff; }
   .contato-phone{ display:block; margin-top:1rem; font-family:var(--mono); font-size:0.85rem; opacity:.85; }
   .contato-phone:hover{ opacity:1; }
-  .contato-phone-mockup{ position:absolute; left:2rem; top:-50px; width:240px; z-index:3; pointer-events:none; filter:drop-shadow(0 30px 40px rgba(0,0,0,.4)); animation:phoneFloat 5s ease-in-out infinite; }
+  .contato-phone-mockup{ position:absolute; left:calc(2rem + 242px); top:-84px; width:300px; z-index:3; pointer-events:none; filter:drop-shadow(0 30px 40px rgba(0,0,0,.4)); animation:phoneFloat 5s ease-in-out infinite; }
   @keyframes phoneFloat{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-18px); } }
   @media (min-width:901px){
-    .contato-row{ padding-left:300px; }
+    .contato-row{ padding-left:600px; }
   }
   @media (max-width:900px){
     .contato-phone-mockup{ display:none; }
