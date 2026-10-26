@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>__TITLE__</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;600;700;800;900&display=swap">
+<style>
+  :root{ --ground:#0b0a09; --ink:#f4efe9; --mute:#9c9088; --neon:#b8261c; --neon-bright:#d94a3a; --line:rgba(244,239,233,.1);
+    --mono:"IBM Plex Mono",ui-monospace,monospace; --sans:"Inter",sans-serif; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:#1a1816; color:var(--ink); font-family:var(--sans); }
+  .toolbar{ position:sticky; top:0; z-index:5; background:#141210; border-bottom:1px solid var(--line); padding:16px 24px;
+    display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+  .title{ font-family:var(--mono); font-weight:700; font-size:13px; letter-spacing:.06em; text-transform:uppercase; }
+  .hint{ font-size:12.5px; color:#ffb4a8; }
+  .layout{ display:flex; gap:40px; padding:40px; justify-content:center; align-items:flex-start; flex-wrap:wrap; }
+  canvas{ width:405px; height:720px; border-radius:14px; box-shadow:0 30px 80px -30px rgba(0,0,0,.6); background:#000; display:block; }
+  .side{ display:flex; flex-direction:column; gap:14px; width:360px; }
+  .actions{ display:flex; gap:10px; flex-wrap:wrap; }
+  .btn{ font-family:var(--mono); font-weight:700; font-size:12.5px; background:var(--neon); color:#fff; border:none; padding:11px 20px; border-radius:999px; cursor:pointer; }
+  .btn:hover{ background:var(--neon-bright); } .btn:disabled{ opacity:.5; cursor:default; }
+  .btn.ghost{ background:transparent; border:1px solid rgba(244,239,233,.25); color:var(--ink); }
+  input[type=range]{ width:100%; accent-color:var(--neon); }
+  .status{ font-family:var(--mono); font-size:12px; color:var(--mute); min-height:18px; }
+  .legenda{ background:#141210; border:1px solid var(--line); border-radius:14px; padding:16px; font-size:13px; line-height:1.6; white-space:pre-wrap; margin:0; }
+</style>
+</head>
+<body>
+<header class="toolbar">
+  <span class="title">__TITLE__ (1080×1920)</span>
+  <span class="hint">Exporta em MP4 60fps quadro a quadro (leva ~1–3 min).</span>
+</header>
+<div class="layout">
+  <canvas id="cv"></canvas>
+  <div class="side">
+    <div class="actions">
+      <button class="btn" id="play">▶ Play com som</button>
+      <button class="btn ghost" id="rec">Baixar vídeo</button>
+    </div>
+    <input type="range" id="scrub" min="0" max="60" step="0.01" value="0">
+    <div class="status" id="status">Carregando…</div>
+    <pre class="legenda" id="legenda"></pre>
+    <button class="btn ghost" id="copy">Copiar legenda</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/SVGLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mp4-muxer@5.1.3/build/mp4-muxer.min.js"></script>
+<script>
+const LOGO_SRC = "__LOGO__";
+const AUDIO_B64 = "__AUDIO__";
+const WORDS = __WORDS__; // [palavra, início, fim] em segundos — vem da narração
+__ENGINE__
+__REEL__
+boot();
+</script>
+</body>
+</html>
