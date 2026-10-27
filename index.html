@@ -177,7 +177,7 @@
   .project-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
   .project-card{ display:block; border-radius:18px; overflow:hidden; background:var(--panel-2); border:1px solid var(--line); transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
   .project-card:hover{ transform:translateY(-6px); border-color:color-mix(in srgb, var(--accent) 45%, transparent); box-shadow:0 24px 50px -24px rgba(0,0,0,0.5); }
-  .project-thumb{ position:relative; aspect-ratio:4/3; overflow:hidden; }
+  .project-thumb{ position:relative; aspect-ratio:16/9; overflow:hidden; }
   .project-thumb img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
   .project-card:hover .project-thumb img{ transform:scale(1.06); }
   .project-thumb-num{ position:absolute; top:0.8rem; left:0.9rem; font-family:var(--mono); font-size:0.7rem; letter-spacing:0.06em; color:#fff; background:rgba(0,0,0,0.55); padding:0.25rem 0.55rem; border-radius:999px; }
@@ -205,10 +205,10 @@
   }
 
   /* ---------- clientes: static logo wall ---------- */
-  .clients-marquee{ overflow:hidden; -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
-  .clients-track{ display:flex; align-items:center; width:max-content; animation:clientsScroll 36s linear infinite; }
-  .clients-track:hover{ animation-play-state:paused; }
-  @keyframes clientsScroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  .clients-marquee{ overflow:hidden; display:flex; flex-direction:column; gap:1.2rem; -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+  .clients-track{ display:flex; align-items:center; width:max-content; will-change:transform; cursor:grab; touch-action:pan-y; user-select:none; -webkit-user-select:none; }
+  .clients-track.dragging{ cursor:grabbing; }
+  .clients-track img{ -webkit-user-drag:none; pointer-events:none; }
   .client-logo{ flex:0 0 auto; display:flex; align-items:center; justify-content:center; height:64px; padding:0 clamp(1.6rem,3.4vw,2.6rem); opacity:.6; transition:opacity .25s ease; }
   .client-logo:hover{ opacity:1; }
   .client-logo img{ height:100%; width:auto; max-width:150px; object-fit:contain; filter:brightness(0) invert(1); }
@@ -528,6 +528,8 @@
         <span class="client-logo"><img src="Clientes/Group%20353.png" alt="Cliente YRA" loading="lazy"></span>
         <span class="client-logo"><img src="Clientes/YIELDTRACK.png" alt="Yieldtrack" loading="lazy"></span>
         <span class="client-logo"><img src="Clientes/download%201.png" alt="Amanda Hipólito Psicóloga" loading="lazy"></span>
+      </div>
+      <div class="clients-track" data-dir="1">
         <span class="client-logo"><img src="Clientes/image%203.png" alt="Dra. Thais Aquino" loading="lazy"></span>
         <span class="client-logo"><img src="Clientes/images.png" alt="Inti AgSolutions" loading="lazy"></span>
         <span class="client-logo"><img src="Clientes/png%202.png" alt="Cliente YRA" loading="lazy"></span>
@@ -535,21 +537,7 @@
         <span class="client-logo"><img src="Clientes/goias.png" alt="Governo do Estado de Goiás — SEDI" loading="lazy"></span>
         <span class="client-logo"><img class="always-white" src="Clientes/Arte%201_PNG.png" alt="HeyHub" loading="lazy"></span>
         <span class="client-logo"><img src="Clientes/vitoria-andrade.svg" alt="Dra. Vitória Andrade" loading="lazy"></span>
-        <span class="client-logo"><img src="Clientes/Group%201044.png" alt="Grupo Brazil" loading="lazy"></span>
-        <span class="client-logo"><img src="Clientes/Group%20202.png" alt="Francis Personal Trainer" loading="lazy"></span>
-        <span class="client-logo"><img src="Clientes/Group%20243.png" alt="Benedita Malhas" loading="lazy"></span>
-        <span class="client-logo"><img class="no-filter" src="Clientes/Group%2027.png" alt="ON BEEF" loading="lazy"></span>
-        <span class="client-logo"><img src="Clientes/Group%20342.png" alt="JC Advogados" loading="lazy"></span>
-        <span class="client-logo"><img src="Clientes/Group%20353.png" alt="Cliente YRA" loading="lazy"></span>
-        <span class="client-logo"><img src="Clientes/YIELDTRACK.png" alt="Yieldtrack" loading="lazy"></span>
-        <span class="client-logo"><img src="Clientes/download%201.png" alt="Amanda Hipólito Psicóloga" loading="lazy"></span>
-        <span class="client-logo"><img src="Clientes/image%203.png" alt="Dra. Thais Aquino" loading="lazy"></span>
-        <span class="client-logo"><img src="Clientes/images.png" alt="Inti AgSolutions" loading="lazy"></span>
-        <span class="client-logo"><img src="Clientes/png%202.png" alt="Cliente YRA" loading="lazy"></span>
-        <span class="client-logo"><img src="Clientes/Subtract.png" alt="Agrotec" loading="lazy"></span>
-        <span class="client-logo"><img src="Clientes/goias.png" alt="Governo do Estado de Goiás — SEDI" loading="lazy"></span>
-        <span class="client-logo"><img class="always-white" src="Clientes/Arte%201_PNG.png" alt="HeyHub" loading="lazy"></span>
-        <span class="client-logo"><img src="Clientes/vitoria-andrade.svg" alt="Dra. Vitória Andrade" loading="lazy"></span>
+        <span class="client-logo"><img style="height:88px;max-width:none" src="Clientes/gdr.png" alt="GDR Gestão de Riscos" loading="lazy"></span>
       </div>
     </div>
   </div>
@@ -659,6 +647,17 @@
   });
 
 })();
+
+// clientes: duas fileiras em loop, arrastáveis (a segunda anda no sentido contrário)
+document.querySelectorAll('.clients-track').forEach(function(t){
+  var set=[].slice.call(t.children), dir=t.dataset.dir?1:-1, x=0, w=0, drag=false, lx=0;
+  for(var i=0;i<2;i++) set.forEach(function(n){ t.appendChild(n.cloneNode(true)); });
+  function wrap(){ w=t.scrollWidth/3; x=((x%w)-w)%w; }
+  t.addEventListener('pointerdown',function(e){ drag=true; lx=e.clientX; t.classList.add('dragging'); t.setPointerCapture(e.pointerId); });
+  t.addEventListener('pointermove',function(e){ if(!drag) return; x+=e.clientX-lx; lx=e.clientX; });
+  ['pointerup','pointercancel'].forEach(function(ev){ t.addEventListener(ev,function(){ drag=false; t.classList.remove('dragging'); }); });
+  (function tick(){ if(!drag) x+=dir*0.5; wrap(); t.style.transform='translateX('+x+'px)'; requestAnimationFrame(tick); })();
+});
 </script>
 
 </body>
